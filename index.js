@@ -1,15 +1,37 @@
-function getFirstSelector(selector) {
-  document.querySelector(selector);
+console.log("refreshed")
+function getFirstSelector(entertag) {
+  return document.querySelector(entertag);
 }
 
 function nestedTarget() {
-  document.querySelector('#nested .target');
+  return document.querySelector('#nested .target');
 }
 
-const list = document.querySelectorAll('ul .ranked-list');
+//DeepestChild function starts here
+const allNodes = document.querySelector('#grand-node');
+function deepestChild() {
+  var node = allNodes.children;
+  while (node[0].childElementCount > 0) {
+      node = node[0].children;
+      console.log(node)
+  }
+  return node;
+}
+
+const list = document.querySelectorAll('.ranked-list li');
 function increaseRankBy(n){
 Array.from(list).forEach((e) => {
-  parseInt(list[i].innerHTML) += parseInt(n);
+  e.innerHTML = (parseInt(e.innerHTML) + parseInt(n)).toString();
 })
 }
 
+/*function nestedTarget() {
+  document.querySelector('#nested .target');
+}
+
+function increaseRankBy(n){
+Array.from(list).forEach((e) => {
+  list[i].innerHTML += parseInt(n);
+})
+}
+*/

@@ -15,7 +15,7 @@ function deepestChild() {
       node = node[0].children;
       console.log(node)
   }
-  return node;
+  return node[0];
 }
 
 const list = document.querySelectorAll('.ranked-list li');
